@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation Template to create a user for the Prowler Security Tool
+  
+Resources:
+  
+  ProwlerIamUser:
+    Type: AWS::IAM::User
+    Properties:
+      Path: /
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/SecurityAudit
+        - arn:aws:iam::aws:policy/job-function/ViewOnlyAccess
+      UserName: prowler
+
